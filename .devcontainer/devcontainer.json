@@ -1,0 +1,22 @@
+{
+  "name": "Java 21 API Dev Container",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "settings": {
+    "terminal.integrated.defaultProfile.linux": "bash"
+  },
+  "extensions": [
+    "vscjava.vscode-java-pack",
+    "humao.rest-client"
+  ],
+  "postCreateCommand": "mvn clean install",
+  "forwardPorts": [8080],
+  "remoteUser": "vscode",
+  "features": {
+    "ghcr.io/devcontainers/features/java:1": {
+      "version": "21"
+    }
+  }
+}
