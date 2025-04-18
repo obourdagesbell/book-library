@@ -6,13 +6,10 @@ import com.library.domain.entities.Book;
 public class BookMapper {
 
     public static BookViewModel mapToViewModel(Book book) {
-        return new BookViewModel(book.getTitle(), book.getAuthor());
+        return new BookViewModel(book.getId(), book.getTitle(), book.getAuthor());
     }
 
     public static Book mapToDomain(BookViewModel bookViewModel) {
-        Book book = new Book();
-        book.setTitle(bookViewModel.getTitle());
-        book.setAuthor(bookViewModel.getAuthor());
-        return book;
+        return new Book(bookViewModel.getId(), bookViewModel.getTitle(), bookViewModel.getAuthor());
     }
 }

@@ -15,6 +15,7 @@
 
     <properties>
         <java.version>21</java.version>
+        <start-class>com.library.LibraryApplication</start-class>
     </properties>
 
     <dependencies>

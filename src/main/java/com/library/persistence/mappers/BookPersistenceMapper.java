@@ -1,20 +1,15 @@
 package com.library.persistence.mappers;
 
 import com.library.domain.entities.Book;
+import com.library.persistence.entities.BookEntity;
 
 public class BookPersistenceMapper {
 
-    public static com.library.persistence.entities.Book mapToPersistence(Book book) {
-        com.library.persistence.entities.Book persistenceBook = new com.library.persistence.entities.Book();
-        persistenceBook.setTitle(book.getTitle());
-        persistenceBook.setAuthor(book.getAuthor());
-        return persistenceBook;
+    public static BookEntity mapToPersistence(Book book) {
+        return new BookEntity(book.getId(), book.getTitle(), book.getAuthor());
     }
 
-    public static Book mapToDomain(com.library.persistence.entities.Book persistenceBook) {
-        Book book = new Book();
-        book.setTitle(persistenceBook.getTitle());
-        book.setAuthor(persistenceBook.getAuthor());
-        return book;
+    public static Book mapToDomain(BookEntity persistenceBook) {
+        return new Book(persistenceBook.getId(), persistenceBook.getTitle(), persistenceBook.getAuthor());
     }
 }
