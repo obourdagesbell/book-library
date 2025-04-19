@@ -1,4 +1,4 @@
-# Java 21 API - Library Management System
+# Java 21 API
 
 ## Overview
 This is a Spring Boot application built with Java 21. It provides a simple API for managing books in a library. The application uses an in-memory H2 database for persistence and includes endpoints for creating and retrieving books.
