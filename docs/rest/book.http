@@ -1,11 +1,14 @@
 ### Get Book by ID
 GET http://localhost:8080/books/1
 
+### Get books by author
+GET http://localhost:8080/books/author/John
+
 ### Create a Book
 POST http://localhost:8080/books
 Content-Type: application/json
 
 {
   "title": "New Book",
-  "author": "Author Name"
+  "author": "John"
 }

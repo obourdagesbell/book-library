@@ -5,7 +5,8 @@ import com.library.persistence.repositories.BookRepository;
 import com.library.persistence.mappers.BookPersistenceMapper;
 import org.springframework.stereotype.Service;
 
-import java.util.Optional;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class BookService {
@@ -26,5 +27,13 @@ public class BookService {
         return BookPersistenceMapper.mapToDomain(
                 bookRepository.save(BookPersistenceMapper.mapToPersistence(book))
         );
+    }
+
+    public List<Book> getBooks(String author) {
+        var books = bookRepository.findAll();
+        return books.stream()
+                .map(BookPersistenceMapper::mapToDomain)
+                .filter(book -> book.getAuthor().equalsIgnoreCase(author))
+                .collect(Collectors.toList());
     }
 }

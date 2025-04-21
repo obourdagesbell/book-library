@@ -23,6 +23,14 @@ public class BookController {
         return BookMapper.mapToViewModel(bookService.getBookById(id));
     }
 
+    @GetMapping("/author/{author}")
+    public List<BookViewModel> getBooksByAuthor(@PathVariable String author) {
+        return bookService.getBooks(author)
+                .stream()
+                .map(BookMapper::mapToViewModel)
+                .collect(Collectors.toList());
+    }
+
     @PostMapping
     public BookViewModel createBook(@RequestBody BookViewModel bookViewModel) {
         return BookMapper.mapToViewModel(

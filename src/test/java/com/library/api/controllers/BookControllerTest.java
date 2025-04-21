@@ -1,7 +1,5 @@
 package com.library.api.controllers;
 
-import com.library.api.mappers.BookMapper;
-import com.library.api.models.BookViewModel;
 import com.library.domain.entities.Book;
 import com.library.domain.services.BookService;
 import org.junit.jupiter.api.BeforeEach;
