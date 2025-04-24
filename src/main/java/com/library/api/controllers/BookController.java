@@ -3,12 +3,13 @@ package com.library.api.controllers;
 import com.library.api.mappers.BookMapper;
 import com.library.api.models.BookViewModel;
 import com.library.domain.services.BookService;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
 
-@RestController
+@Controller
 @RequestMapping("/books")
 public class BookController {
 
