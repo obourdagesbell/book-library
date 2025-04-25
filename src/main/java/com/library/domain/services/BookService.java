@@ -3,6 +3,7 @@ package com.library.domain.services;
 import com.library.domain.entities.Book;
 import com.library.persistence.repositories.BookRepository;
 import com.library.persistence.mappers.BookPersistenceMapper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -11,11 +12,7 @@ import java.util.stream.Collectors;
 @Service
 public class BookService {
 
-    private final BookRepository bookRepository;
-
-    public BookService(BookRepository bookRepository) {
-        this.bookRepository = bookRepository;
-    }
+    private BookRepository bookRepository;
 
     public Book getBookById(Long id) {
         return bookRepository.findById(id)
@@ -35,5 +32,10 @@ public class BookService {
                 .map(BookPersistenceMapper::mapToDomain)
                 .filter(book -> book.getAuthor().equalsIgnoreCase(author))
                 .collect(Collectors.toList());
+    }
+
+    @Autowired
+    public void setBookRepository(BookRepository bookRepository) {
+        this.bookRepository = bookRepository;
     }
 }
