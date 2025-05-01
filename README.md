@@ -1,4 +1,4 @@
-# Java 21 API
+# Book Store
 
 ## Overview
 This is a Spring Boot application with bad practices. It provides a simple API for managing books in a store. The application uses an in-memory H2 database for persistence and includes endpoints for creating and retrieving books.
