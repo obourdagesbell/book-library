@@ -1,7 +1,7 @@
 # Java 21 API
 
 ## Overview
-This is a Spring Boot application with bad practices. It provides a simple API for managing books in a library. The application uses an in-memory H2 database for persistence and includes endpoints for creating and retrieving books.
+This is a Spring Boot application with bad practices. It provides a simple API for managing books in a store. The application uses an in-memory H2 database for persistence and includes endpoints for creating and retrieving books.
 
 ## Prerequisites
 - Java 21
@@ -11,7 +11,7 @@ This is a Spring Boot application with bad practices. It provides a simple API f
 1. Clone the repository:
    ```bash
    git clone <repository-url>
-   cd java21-api
+   cd book-store
    ```
 2. Build the project:
    ```bash
